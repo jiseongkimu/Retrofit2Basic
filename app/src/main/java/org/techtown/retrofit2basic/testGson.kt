@@ -35,7 +35,7 @@ data class Header(
 
 data class Items(
     @SerializedName("item")
-    val item: List<Item?>?
+    val item: List<Item>
 )
 
 
