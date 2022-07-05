@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 
 class MainActivity : AppCompatActivity() {
     private val api_key =
-        "YyaJKps0/kekxwrrVHBWQ7og4zx/ABO7rPKD+wTMWfcZp3C4vBVp502qXVGBgNOKTWPGdmuMDR6M7Ei3SyfBTA=="
+        ""
     private val adapter by lazy { Adapter() }
 
     private lateinit var binding: ActivityMainBinding
