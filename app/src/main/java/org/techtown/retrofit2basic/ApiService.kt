@@ -12,8 +12,7 @@ interface ApiService {
                 @Query("numOfRows") numOfRows : Int,
                 @Query("startCreateDt") startCreateDt : Int,
                 @Query("endCreateDt") endCreateDt : Int,
-                @Query("_type") _type : String
-    ) : Call<DataClass>
+                @Query("_type") _type : String):  Call<DataClass>
 }
 
 // http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson

@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import org.techtown.retrofit2basic.databinding.ItemViewBinding
 
 class Adapter() : RecyclerView.Adapter<Adapter.ViewHolder>(){
-    private var listItems : List<DataClass> ?= null
+    private var listItems : List<Item> ?= null
 
-    fun submitList(list : List<DataClass>){
+    fun submitList(list : List<Item>){
         listItems = list
     }
 
@@ -27,8 +27,9 @@ class Adapter() : RecyclerView.Adapter<Adapter.ViewHolder>(){
 
     class ViewHolder(
         private val binding : ItemViewBinding
-        ) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item: DataClass){
+    ) : RecyclerView.ViewHolder(binding.root){
+        fun bind(item: Item){
+            binding.data = item
             //  binding.data = item
         }
     }

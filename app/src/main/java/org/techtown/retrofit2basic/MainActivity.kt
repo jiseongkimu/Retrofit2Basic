@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 
 class MainActivity : AppCompatActivity() {
     private val api_key =
-         ""
+        "YyaJKps0/kekxwrrVHBWQ7og4zx/ABO7rPKD+wTMWfcZp3C4vBVp502qXVGBgNOKTWPGdmuMDR6M7Ei3SyfBTA=="
     private val adapter by lazy { Adapter() }
 
     private lateinit var binding: ActivityMainBinding
@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     Log.d("TAG", "response.isSuccessful : " + response.body().toString())
                     response.body()?.let {
-                        adapter.submitList(listOf(it)) // 어댑터 메소드에 리스트 넘겨줌
+
+                        adapter.submitList( it.response.body.items.item) // 어댑터 메소드에 리스트 넘겨줌
                         adapter.notifyDataSetChanged() // 어댑터 갱신하라고 츠발라마 하는 코드
 
 //                        val adapter = Adapter(listOf(it))
