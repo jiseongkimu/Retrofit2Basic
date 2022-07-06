@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
 
         <variable
@@ -7,10 +8,9 @@
             type="org.techtown.retrofit2basic.Item" />
     </data>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_createDt"
@@ -30,6 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+    </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
 </layout>
