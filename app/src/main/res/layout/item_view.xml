@@ -12,24 +12,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_createDt"
-            createDt="@{String.valueOf(data.createDt)}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_stateTime"
-            decideCnt="@{String.valueOf(data.decideCnt)}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_createDt"
+                createDt="@{String.valueOf(data.createDt)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_updateDt"
-            deathCnt="@{String.valueOf(data.deathCnt)}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_stateTime"
+                decideCnt="@{String.valueOf(data.decideCnt)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_updateDt"
+                deathCnt="@{String.valueOf(data.deathCnt)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 </layout>
