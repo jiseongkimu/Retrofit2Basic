@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 
 class MainActivity : AppCompatActivity() {
     private val api_key =
-        ""
+        " "
 
     private val adapter by lazy { Adapter() }
 
