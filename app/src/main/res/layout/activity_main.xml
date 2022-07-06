@@ -54,7 +54,7 @@
             android:layout_margin="20dp"
             android:clickable="true"
             android:focusable="true"
-            android:text="invisible"
+            android:text="visible"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +68,7 @@
             android:layout_margin="20dp"
             android:clickable="true"
             android:focusable="true"
-            android:text="visible"
+            android:text="invisible"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

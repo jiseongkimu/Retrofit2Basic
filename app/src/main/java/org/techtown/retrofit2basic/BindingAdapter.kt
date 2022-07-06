@@ -36,6 +36,6 @@ object BindingAdapter {
     @JvmStatic
     @BindingAdapter("setVisiblrBtnText")
     fun setVisiblrBtnText(view: TextView, isGone: Boolean) {
-        view.text = if(isGone) "INVISIBLE" else "VISIBLE"
+        view.text = if(isGone) "VISIBLE" else "INVISIBLE"
     }
 }
