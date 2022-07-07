@@ -58,10 +58,10 @@
             android:layout_margin="20dp"
             android:clickable="true"
             android:focusable="true"
+            android:onClick="@{viewModel::onClickBtn}"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:onClick="@{viewModel::onClickBtn}"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btn_invisible"
