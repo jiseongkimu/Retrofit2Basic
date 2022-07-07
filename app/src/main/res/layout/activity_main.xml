@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="viewModel"
+            type="org.techtown.retrofit2basic.MainViewModel" />
+
+        <variable
             name="main"
             type="org.techtown.retrofit2basic.MainActivity" />
 
@@ -21,6 +25,17 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <TextView
+            android:id="@+id/visibleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="visible 상태"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             visible="@{loading}"
@@ -31,21 +46,22 @@
             app:layout_constraintBottom_toTopOf="@+id/btn_invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/visibleTxt"
             tools:listitem="@layout/item_view" />
 
 
         <Button
             android:id="@+id/btn_visiblable"
+            setVisiblrBtnText="@{loading}"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:clickable="true"
             android:focusable="true"
-            setVisiblrBtnText="@{loading}"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{viewModel::onClickBtn}"/>
 
         <Button
             android:id="@+id/btn_invisible"
