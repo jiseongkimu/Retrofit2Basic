@@ -1,7 +1,8 @@
 package org.techtown.retrofit2basic
-/*
-class Repository(
-    private val
-) {
+
+class Repository{
+    fun getPost(query : Int) =
+        Pager(
+            config = PaingConfig
+        )
 }
-*/

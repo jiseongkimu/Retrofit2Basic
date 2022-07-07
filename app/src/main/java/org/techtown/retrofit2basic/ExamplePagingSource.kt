@@ -4,6 +4,9 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import java.io.IOException
 /*
+* backend : 데이터를 제공하는 인스턴스
+* query : 쿼리를 위한 값
+* */
 class ExamplePagingSource(
     val backend: ExampleBackendService
     val query: String
@@ -47,4 +50,4 @@ class ExamplePagingSource(
         }
     }
 }
-*/
+
