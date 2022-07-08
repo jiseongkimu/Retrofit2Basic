@@ -10,10 +10,6 @@
             type="org.techtown.retrofit2basic.MainViewModel" />
 
         <variable
-            name="main"
-            type="org.techtown.retrofit2basic.MainActivity" />
-
-        <variable
             name="loading"
             type="Boolean" />
 
