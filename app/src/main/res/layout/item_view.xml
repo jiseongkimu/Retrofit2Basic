@@ -10,18 +10,20 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        app:cardBackgroundColor="#939494"
+        app:cardBackgroundColor="#9999CC"
         app:cardCornerRadius="10dp"
         app:cardElevation="@dimen/cardview_default_elevation"
-        app:contentPadding="20dp">
+        app:contentPadding="10dp"
+        android:layout_margin="10dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_createDt"
