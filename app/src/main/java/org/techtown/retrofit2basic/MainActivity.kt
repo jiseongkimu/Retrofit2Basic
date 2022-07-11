@@ -16,14 +16,14 @@ class MainActivity : AppCompatActivity() {
 
         bindingMain.tab1.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
-                .add(R.id.framelayout, OneFragment())
+                .replace(R.id.framelayout, OneFragment())
             transaction.commit()
             Log.d("TAB1","TAB1 눌리니?")
         }
 
         bindingMain.tab2.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
-                .add(R.id.framelayout, TwoFragment())
+                .replace(R.id.framelayout, TwoFragment())
             transaction.commit()
             Log.d("TAB2","TAB2 눌리니?")
         }

@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import org.techtown.retrofit2basic.databinding.ActivityMainBinding
 import org.techtown.retrofit2basic.databinding.FragmentTab1Binding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class OneFragment : Fragment() {
     private val api_key =
-        "YyaJKps0/kekxwrrVHBWQ7og4zx/ABO7rPKD+wTMWfcZp3C4vBVp502qXVGBgNOKTWPGdmuMDR6M7Ei3SyfBTA=="
+        ""
 
     private val adapter by lazy { Adapter() }
 
@@ -28,18 +28,18 @@ class OneFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentTab1Binding.inflate(inflater, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_tab1, container, false)
         return binding.root
+
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        //binding = DataBindingUtil.setContentView(activity?.let { binding = }, R.layout.fragment_tab1)
-        activity?.let { binding = DataBindingUtil.setContentView(it, R.layout.fragment_tab1) }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //binding = DataBindingUtil.setContentView(, R.layout.fragment_tab1)
+        //activity?.let { binding = DataBindingUtil.setContentView(it, R.layout.fragment_tab1) }
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        mainViewModel.isVisible.observe(this) { isVisible ->
+        mainViewModel.isVisible.observe(viewLifecycleOwner) { isVisible ->
             if (isVisible) {
                 binding.visibleTxt.text = "숨김"
                 binding.loading = true
@@ -56,12 +56,16 @@ class OneFragment : Fragment() {
         binding.recyclerView.adapter = adapter
         binding.loading = false
 
-        binding.btnInvisible.setOnClickListener {
-            binding.loading = false
-        }
-
+        // 표시 상태로 변경
         binding.btnVisible.setOnClickListener {
             binding.loading = true
+            binding.visibleTxt.text = "숨김"
+        }
+
+        // 숨김 상태로 변경
+        binding.btnInvisible.setOnClickListener {
+            binding.loading = false
+            binding.visibleTxt.text = "표시"
         }
 
 
@@ -89,5 +93,10 @@ class OneFragment : Fragment() {
                 }
             }))
     }
+    override fun onDestroy() {
+        Log.d("TAG", "onDestroy()")
+        super.onDestroy()
+    }
+
 }
 
