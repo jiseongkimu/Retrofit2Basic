@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -15,88 +16,90 @@
 
     </data>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/visibleTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="visible 상태"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            visible="@{loading}"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scrollbars="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/btn_linear"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/visibleTxt"
-            tools:listitem="@layout/item_view" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/btn_linear"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recycler_view">
+            android:layout_height="match_parent">
 
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_visiblable"
-                setVisiblrBtnText="@{loading}"
-                android:layout_width="100dp"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/visibleTxt"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/visible_btn"
-                android:clickable="true"
-                android:focusable="true"
-                android:onClick="@{viewModel::onClickBtn}"
-                android:textColor="#000000"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toTopOf="@id/tab1" />
+                android:text="visible 상태"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_invisible"
-                android:layout_width="100dp"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                visible="@{loading}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/btn_linear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/visibleTxt"
+                tools:listitem="@layout/item_view" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_linear"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/visible_btn"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="visible"
-                android:textColor="#000000"
-                android:textSize="10sp" />
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view">
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_visible"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/visible_btn"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="invisible"
-                android:textColor="#000000"
-                android:textSize="10sp" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_visiblable"
+                    setVisiblrBtnText="@{loading}"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/visible_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{viewModel::onClickBtn}"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@id/tab1" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_invisible"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/visible_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="visible"
+                    android:textColor="#000000"
+                    android:textSize="10sp" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_visible"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/visible_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="invisible"
+                    android:textColor="#000000"
+                    android:textSize="10sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 </layout>

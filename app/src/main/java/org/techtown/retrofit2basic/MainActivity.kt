@@ -2,6 +2,7 @@ package org.techtown.retrofit2basic
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import org.techtown.retrofit2basic.databinding.ActivityMainBinding
 
@@ -14,13 +15,17 @@ class MainActivity : AppCompatActivity() {
         bindingMain = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         bindingMain.tab1.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.tab1, OneFragment())
+            val transaction = supportFragmentManager.beginTransaction()
+                .add(R.id.framelayout, OneFragment())
+            transaction.commit()
+            Log.d("TAB1","TAB1 눌리니?")
         }
 
         bindingMain.tab2.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.tab2, TwoFragment())
+            val transaction = supportFragmentManager.beginTransaction()
+                .add(R.id.framelayout, TwoFragment())
+            transaction.commit()
+            Log.d("TAB2","TAB2 눌리니?")
         }
 
 

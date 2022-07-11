@@ -88,8 +88,6 @@ class OneFragment : Fragment() {
                     Log.d("TAG", "응 안됐어" + t.message.toString())
                 }
             }))
-
-
     }
 }
 
