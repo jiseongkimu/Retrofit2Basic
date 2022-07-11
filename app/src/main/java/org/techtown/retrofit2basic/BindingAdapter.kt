@@ -27,7 +27,7 @@ object BindingAdapter {
     @BindingAdapter("visible")
     fun isVisible(view: View, isGone: Boolean) {
         view.visibility = if (isGone) {
-            View.GONE
+            View.INVISIBLE
         } else {
             View.VISIBLE
         }
